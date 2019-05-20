@@ -1,0 +1,28 @@
+<h1 class="text-center">Flats List</h1>
+<div class="container">
+  <div class="col-12">
+
+    <% @flats.each do |flat| %>
+      <div class="card mb-3" >
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <%= image_tag flat['imageUrl'], class: 'card-img' %>
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">
+                <%= link_to flat['name'], flat_path(flat['id']) %>
+              </h5>
+              <p class="card-text">
+                <small class="text-muted">
+                  <%= flat['price'] %> <%= flat['priceCurrency'] %>
+                </small>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+  </div>
+</div>
